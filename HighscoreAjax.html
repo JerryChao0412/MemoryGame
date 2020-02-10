@@ -1,0 +1,31 @@
+<html>
+<head>
+    <script src="./styles/bubble.css"></script>
+     <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <link rel="stylesheet" type="text/css" href="./styles/bubble.css">
+</head>
+<body>
+    <div id="demo">
+        
+    </div>
+    <script>
+        function myFunc() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("POST", "highscore.php",true);
+            xhttp.send();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo").innerHTML =
+                        this.responseText;
+                }
+            };
+            
+        }
+        window.onload = myFunc;
+		
+		
+    </script>
+</body>
+
+</html>

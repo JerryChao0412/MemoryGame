@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Memory Matrix</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+<div class="wrapper">
+       <div id="game" class="game">
+			<div class="game_title">Test your brain</div>
+			
+			<button class="button2" onclick="game()" >Game START</button>
+			<button class="button2" onclick="window.location.href='HighscoreAjax.html'" >Leader Board</button>
+		</div> 
+		
+		<div id="board" class="board">
+		<div id="start" class="popup start"><p onclick="matrix()">START</p></div>	
+		<div id ="rotate" class="matrix"></div>
+	
+		<div id="end" class="popup end">
+            <div class="end-content">
+                <button id="win" class="msg button2" onclick="nextLevel()">Next Game!</button>
+            </div>
+		</div>
+	   
+		<div id="fail" class="popup end">
+            <div class="end-content">
+                <button id="retry" class="msg button2" onclick="retry_game()">Retry!</button>
+            </div>
+		</div>
+		
+		
+		
+		<div class="info">
+			<div id="score" class="score">Point: 0</div>
+			<div id="tiles" class="tiles"></div>
+		</div>
+		<button class="button2" onclick="finish()" >End Game</button>
+		<button class="button2" onclick="restart()" >Restart</button>
+		
+	</div> 
+</div>
+<div id="insert">
+<form  id="" action="Insert.php" method="post">
+<div >
+    <label for="name">Your name*</label>
+    <input type="text" id="Name" name="Name" size="4" />
+</div>
+
+<div>
+    <label for="score">Your Score</label>
+    <input type="number" id="Score" name="Score" size="4" />
+</div>
+      <div ><input type="submit" onclick="send('Name', 'Score')" name="button2" id="button2" value="Send" size="4"/></div>
+</div>
+<audio id="win_sound" src="win.wav"></audio>
+        <script src="script.js"></script>
+</body>
+</html>
